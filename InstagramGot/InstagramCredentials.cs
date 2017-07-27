@@ -4,19 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InstagramGot.Auth
+namespace InstagramGot
 {
-    class InstagramCredentials
+    public class InstagramCredentials
     {
         private string clientID;
-        private string clientSecret;
+
+        public string ClientID { get => clientID; set => clientID = value; }
 
         /// <param name="clientID">Client ID from api application</param>
         /// <param name="clientSecret">Client Secret Id from api application</param>
-        public InstagramCredentials(string clientID, string clientSecret)
+        public InstagramCredentials(string clientID)
         {
-            this.clientID = clientID;
-            this.clientSecret = clientSecret;
+            this.ClientID = clientID;
         }
     }
 }
