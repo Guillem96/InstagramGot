@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace InstagramGot.Models
 {
-    public class User
+    internal class User : IUser
     {
         private long id;
         private string username;
@@ -65,19 +65,9 @@ namespace InstagramGot.Models
         /// </summary>
         public int FollowedBy { get => followedBy; set => followedBy = value; }
 
-        public User (string json)
+        public User ()
         {
-            JObject jObject = JObject.Parse(json);
-            JToken jUser = jObject["data"];
-            Id = long.Parse(jUser["id"].ToString());
-            Username = jUser["username"].ToString();
-            ProfilePictureUrl =jUser["profile_picture"].ToString();
-            FullName = jUser["full_name"].ToString();
-            Bio = jUser["bio"].ToString();
-            Website = jUser["website"].ToString();
-            Media = int.Parse(jUser["counts"]["media"].ToString());
-            Follows = int.Parse(jUser["counts"]["follows"].ToString());
-            FollowedBy = int.Parse(jUser["counts"]["followed_by"].ToString());
+            
         }
     }
 }

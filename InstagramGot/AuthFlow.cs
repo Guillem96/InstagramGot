@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using InstagramGot.Auth;
+using InstagramGot.QueryExecutor;
 
 namespace InstagramGot
 {
@@ -13,19 +14,17 @@ namespace InstagramGot
     /// </summary>
     public static class AuthFlow
     {
-        private static AuthContext authContext;
+        private static IAuthContext authContext;
+        private static IUserQueryExecutor userQueryExecutor = new UserQueryExecutor();
 
         /// <summary>
         /// Creates an authorization url for the authcontext.
         /// </summary>
         /// <param name="appCredentials">InstagramCredential object</param>
         /// <param name="callbackUrl">Application's callback url</param>
-        public static AuthContext InitAuth(InstagramCredentials appCredentials, string callbackUrl)
+        public static IAuthContext InitAuth(InstagramCredentials appCredentials, string callbackUrl)
         {
-            authContext =  new AuthContext()
-            {
-                AuthorizationURL = GetAuthUrl(appCredentials, callbackUrl)
-            };
+            authContext = AuthContext.AuthContextFromCredentials(appCredentials, callbackUrl);
 
             return authContext;
         }
@@ -43,24 +42,11 @@ namespace InstagramGot
             InstagramHttpClient.InstagramHttpClient.context = authContext;
         }
 
-        public static Models.User SetUserCredentials()
+        public static Models.IUser SetUserCredentials()
         {
-            string json = InstagramHttpClient.InstagramHttpClient.APICallUsersEndpoint("self");
-            Users.UserManager.AuthenticatedUser = new Models.User(json);
-            return Users.UserManager.AuthenticatedUser;
+            UserManager.AuthContext = authContext;
+            return UserManager.GetAuthenticatedUser();
         }
-
-        /// <summary>
-        /// Get the authorization url.
-        /// </summary>
-        private static string GetAuthUrl(InstagramCredentials appCredentials, string callbackUrl)
-        {
-            return String.Format("https://api.instagram.com/oauth/authorize/" +
-                                    "?client_id={0}" +
-                                    "&redirect_uri={1}" +
-                                    "&response_type=token", appCredentials.ClientID, callbackUrl);
-        }
-
 
     }
 }

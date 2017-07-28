@@ -45,15 +45,35 @@
   <ItemGroup>
     <Compile Include="Auth\AuthContext.cs" />
     <Compile Include="AuthFlow.cs" />
+    <Compile Include="Auth\IAuthContext.cs" />
     <Compile Include="InstagramCredentials.cs" />
     <Compile Include="Exceptions.cs" />
     <Compile Include="InstagramHttpClient\InstagramHttpClient.cs" />
+    <Compile Include="InstagramHttpClient\UserEndPoint.cs" />
+    <Compile Include="JsonController\IJsonControllerUser.cs" />
+    <Compile Include="JsonController\IJsonLocationController.cs" />
+    <Compile Include="JsonController\IJsonMediaController.cs" />
+    <Compile Include="JsonController\JsonLocationController.cs" />
+    <Compile Include="JsonController\JsonMediaController.cs" />
+    <Compile Include="JsonController\JsonUserController.cs" />
+    <Compile Include="Models\ILocation.cs" />
+    <Compile Include="Models\IMedia.cs" />
+    <Compile Include="Models\IUser.cs" />
+    <Compile Include="Models\IUserFrom.cs" />
+    <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\Media.cs" />
+    <Compile Include="Models\UserFrom.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\User.cs" />
-    <Compile Include="Users\UserManager.cs" />
+    <Compile Include="QueryExecutor\IUserQueryExecutor.cs" />
+    <Compile Include="QueryExecutor\Parameters\IUsersQueryParameters.cs" />
+    <Compile Include="QueryExecutor\Parameters\UsersQueryParameters.cs" />
+    <Compile Include="UserManager.cs" />
+    <Compile Include="QueryExecutor\UserQueryExecutor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
