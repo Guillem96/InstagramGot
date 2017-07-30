@@ -11,7 +11,10 @@ namespace InstagramGot.JsonController
     interface IJsonUserController
     {
         IUser MapJsonToUser(string json);
-        IUserFrom MapJsonToUser(JToken json);
+        IUser MapJsonToUser(JToken json);
+        IMinifiedUser MapJsonToMinifiedUser(JToken json);
+        List<IMinifiedUser> MapJsonToMinifiedUsers(string json);
+        List<IUser> MapJsonToUsers(string json);
 
     }
 }

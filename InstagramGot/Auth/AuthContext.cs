@@ -27,7 +27,8 @@ namespace InstagramGot.Auth
             return String.Format("https://api.instagram.com/oauth/authorize/" +
                                     "?client_id={0}" +
                                     "&redirect_uri={1}" +
-                                    "&response_type=token", appCredentials.ClientID, callbackUrl);
+                                    "&response_type=token", appCredentials.ClientID, callbackUrl) +
+                                    "&scope=public_content+follower_list+relationships";
         }
 
 

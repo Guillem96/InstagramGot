@@ -1,8 +1,8 @@
 ﻿namespace InstagramGot.Parameters
 {
-    public interface IUsersQueryParameters
+    public interface ISearchUserParameters
     {
         int? Count { get; set; }
-        long Id { get; set; }
+        string Query { get; set; }
     }
 }

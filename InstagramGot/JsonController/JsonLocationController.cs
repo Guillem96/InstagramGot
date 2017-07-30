@@ -30,6 +30,9 @@ namespace InstagramGot.JsonController
             return l;
         }
 
+        /// <summary>
+        /// Creates a location from an existing json token
+        /// </summary>
         public ILocation MapJsonToLocation(JToken jLocation)
         {
             if (!jLocation.HasValues) return null;

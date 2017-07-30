@@ -13,7 +13,6 @@ namespace InstagramGot
         public string ClientID { get => clientID; set => clientID = value; }
 
         /// <param name="clientID">Client ID from api application</param>
-        /// <param name="clientSecret">Client Secret Id from api application</param>
         public InstagramCredentials(string clientID)
         {
             this.ClientID = clientID;

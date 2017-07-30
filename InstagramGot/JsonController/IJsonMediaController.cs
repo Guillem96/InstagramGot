@@ -4,7 +4,7 @@ using Newtonsoft.Json.Linq;
 
 namespace InstagramGot.JsonController
 {
-    internal interface IJsonMediaController
+    interface IJsonMediaController
     {
         IMedia MapJsonToMedia(JToken jMedia);
         IMedia MapJsonToMedia(string json);

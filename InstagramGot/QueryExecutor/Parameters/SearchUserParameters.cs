@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace InstagramGot.Parameters
 {
-    public class UsersQueryParameters : IUsersQueryParameters
+    public class SearchUserParameters : ISearchUserParameters
     {
-        public int? Count {get;set; }
-        public long Id { get; set; }
+        public string Query { get; set; }
+        public int? Count { get; set; }
     }
 }

@@ -18,7 +18,15 @@ namespace InstagramGot.InstagramHttpClient
         /// </summary>
         protected enum EndPointsTypes
         {
-            Users, Relationships, Media, Comments, Likes
+            Users,
+            Relationships,
+                // Endpoints inside relationship endpoint
+                Follows,
+                FollowedBy,
+                RequestedBy,
+            Media,
+            Comments,
+            Likes,
         };
 
         protected static HttpClient client = new HttpClient()
@@ -32,9 +40,28 @@ namespace InstagramGot.InstagramHttpClient
         {
             { EndPointsTypes.Users, "users/" },
             { EndPointsTypes.Relationships, "users/{0}/relationship/" },
+            { EndPointsTypes.Follows, "users/self/follows/" },
+            { EndPointsTypes.FollowedBy, "users/self/followed-by/" },
+            { EndPointsTypes.RequestedBy, "users/self/requested-by/" },
             { EndPointsTypes.Media, "media/" },
             { EndPointsTypes.Comments, "media/{0}/comments/" },
             { EndPointsTypes.Likes, "media/{0}/likes/" },
         };
+
+        /// <summary>
+        /// Read the respones and returns a json string
+        /// </summary>
+        protected static string ReadRespone(HttpClient client, string url)
+        {
+            HttpResponseMessage response = client.GetAsync(url).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                return response.Content.ReadAsStringAsync().Result;
+            }
+            else
+            {
+                throw new Exceptions.InstagramAPICallException("Invalid API Call:" + response.Content.ReadAsStringAsync().Result);
+            }
+        }
     }
 }

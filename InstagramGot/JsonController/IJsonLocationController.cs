@@ -3,7 +3,7 @@ using Newtonsoft.Json.Linq;
 
 namespace InstagramGot.JsonController
 {
-    internal interface IJsonLocationController
+    interface IJsonLocationController
     {
         ILocation MapJsonToLocation(string json);
         ILocation MapJsonToLocation(JToken json);

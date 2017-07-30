@@ -4,7 +4,7 @@ namespace InstagramGot.Models
 {
     public interface IMedia
     {
-        IUserFrom CreatedBy { get; set; }
+        IMinifiedUser CreatedBy { get; set; }
         int CommentsCount { get; set; }
         long CreatedTimeUnixMiliseconds { get; set; }
         long Id { get; set; }
@@ -15,6 +15,6 @@ namespace InstagramGot.Models
         ILocation Location { get; set; }
         string MediaUrl { get; set; }
         string Text { get; set; }
-        List<IUserFrom> UsersInPhoto { get; set; }
+        List<IMinifiedUser> UsersInPhoto { get; set; }
     }
 }

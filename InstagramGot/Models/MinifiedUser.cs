@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace InstagramGot.Models
 {
-    internal class UserFrom : IUserFrom
+    internal class MinifiedUser : IMinifiedUser
     {
         public long Id { get; set; }
         public string Username { get; set; }
         public string ProfileImageUrl { get; set; }
+        public string FullName { get; set; }
     }
 }

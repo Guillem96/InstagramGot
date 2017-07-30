@@ -8,7 +8,7 @@ namespace InstagramGot.Models
 {
     internal class Media : IMedia
     {
-        private IUserFrom createdBy;
+        private IMinifiedUser createdBy;
         private string imageThumbnailUrl;
         private string imageLowResolutionUrl;
         private string imageStandardResolutionUrl;
@@ -19,7 +19,7 @@ namespace InstagramGot.Models
         private int commentsCount;
         private string mediaUrl;
         // TODO:Tags
-        private List<IUserFrom> usersInPhoto;
+        private List<IMinifiedUser> usersInPhoto;
         private ILocation location;
 
         public string ImageThumbnailUrl { get => imageThumbnailUrl; set => imageThumbnailUrl = value; }
@@ -32,7 +32,7 @@ namespace InstagramGot.Models
         public int CommentsCount { get => commentsCount; set => commentsCount = value; }
         public string MediaUrl { get => mediaUrl; set => mediaUrl = value; }
         public ILocation Location { get => location; set => location = value; }
-        public IUserFrom CreatedBy { get => createdBy; set => createdBy = value; }
-        public List<IUserFrom> UsersInPhoto { get => usersInPhoto; set => usersInPhoto = value; }
+        public IMinifiedUser CreatedBy { get => createdBy; set => createdBy = value; }
+        public List<IMinifiedUser> UsersInPhoto { get => usersInPhoto; set => usersInPhoto = value; }
     }
 }

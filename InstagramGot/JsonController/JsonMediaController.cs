@@ -38,7 +38,7 @@ namespace InstagramGot.JsonController
             JObject jObject = JObject.Parse(json);
             JToken jMedia = jObject["data"];
 
-            m.CreatedBy = userJson.MapJsonToUser(jMedia["user"]);
+            m.CreatedBy = userJson.MapJsonToMinifiedUser(jMedia["user"]);
             m.ImageThumbnailUrl = jMedia["images"]["thumbnail"].ToString();
             m.ImageLowResolutionUrl = jMedia["images"]["low_resolution"].ToString();
             m.ImageStandardResolutionUrl = jMedia["images"]["standard_resolution"].ToString();
@@ -51,10 +51,10 @@ namespace InstagramGot.JsonController
             m.MediaUrl = jMedia["link"].ToString();
             m.Location = new JsonLocationController().MapJsonToLocation(jMedia["location"]);
 
-            m.UsersInPhoto = new List<IUserFrom>();
+            m.UsersInPhoto = new List<IMinifiedUser>();
             foreach(var token in jMedia["users_in_photo"])
             {
-                m.UsersInPhoto.Add(userJson.MapJsonToUser(jMedia["user"]));
+                m.UsersInPhoto.Add(userJson.MapJsonToMinifiedUser(jMedia["user"]));
             }
             return m;
         }
@@ -68,7 +68,7 @@ namespace InstagramGot.JsonController
 
             IMedia m = new Media()
             {
-                CreatedBy = userJson.MapJsonToUser(jMedia["user"]),
+                CreatedBy = userJson.MapJsonToMinifiedUser(jMedia["user"]),
                 ImageThumbnailUrl = jMedia["images"]["thumbnail"]["url"].ToString(),
                 ImageLowResolutionUrl = jMedia["images"]["low_resolution"]["url"].ToString(),
                 ImageStandardResolutionUrl = jMedia["images"]["standard_resolution"]["url"].ToString(),
@@ -81,11 +81,11 @@ namespace InstagramGot.JsonController
                 MediaUrl = jMedia["link"].ToString(),
                 Location = new JsonLocationController().MapJsonToLocation(jMedia["location"]),
 
-                UsersInPhoto = new List<IUserFrom>()
+                UsersInPhoto = new List<IMinifiedUser>()
             };
             foreach (var token in jMedia["users_in_photo"])
             {
-                m.UsersInPhoto.Add(userJson.MapJsonToUser(jMedia["user"]));
+                m.UsersInPhoto.Add(userJson.MapJsonToMinifiedUser(jMedia["user"]));
             }
             return m;
         }
