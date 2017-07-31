@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstagramGot", "InstagramGot\InstagramGot.csproj", "{B4E80FC8-2D47-4706-A774-2C6F58191311}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstagramGot.Test", "InstagramGot.Test\InstagramGot.Test.csproj", "{1190A4C7-3D03-41AA-9E2B-200335EE7BEE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B4E80FC8-2D47-4706-A774-2C6F58191311}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4E80FC8-2D47-4706-A774-2C6F58191311}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4E80FC8-2D47-4706-A774-2C6F58191311}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1190A4C7-3D03-41AA-9E2B-200335EE7BEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1190A4C7-3D03-41AA-9E2B-200335EE7BEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1190A4C7-3D03-41AA-9E2B-200335EE7BEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1190A4C7-3D03-41AA-9E2B-200335EE7BEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

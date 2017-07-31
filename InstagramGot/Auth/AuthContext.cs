@@ -9,7 +9,7 @@ namespace InstagramGot.Auth
     internal class AuthContext : IAuthContext
     {
         public string AuthorizationURL { get; set; }
-        public string AccesToken { get; set; }
+        public string AccessToken { get; set; }
 
         public static IAuthContext AuthContextFromCredentials(InstagramCredentials credentials, string callbackUrl)
         {
@@ -28,7 +28,7 @@ namespace InstagramGot.Auth
                                     "?client_id={0}" +
                                     "&redirect_uri={1}" +
                                     "&response_type=token", appCredentials.ClientID, callbackUrl) +
-                                    "&scope=public_content+follower_list+relationships";
+                                    "&scope=basic+public_content+follower_list+relationships+comments+likes";
         }
 
 

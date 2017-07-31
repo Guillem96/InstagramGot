@@ -12,5 +12,10 @@ namespace InstagramGot.Models
         public string Username { get; set; }
         public string ProfileImageUrl { get; set; }
         public string FullName { get; set; }
+
+        public override string ToString()
+        {
+            return "Minidied User: " + Username;
+        }
     }
 }

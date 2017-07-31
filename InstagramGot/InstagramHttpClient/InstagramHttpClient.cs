@@ -27,6 +27,8 @@ namespace InstagramGot.InstagramHttpClient
             Media,
             Comments,
             Likes,
+            Tags,
+            Locations,
         };
 
         protected static HttpClient client = new HttpClient()
@@ -46,14 +48,16 @@ namespace InstagramGot.InstagramHttpClient
             { EndPointsTypes.Media, "media/" },
             { EndPointsTypes.Comments, "media/{0}/comments/" },
             { EndPointsTypes.Likes, "media/{0}/likes/" },
+            { EndPointsTypes.Tags, "tags/" },
+            {EndPointsTypes.Locations, "locations/" }
+
         };
 
         /// <summary>
         /// Read the respones and returns a json string
         /// </summary>
-        protected static string ReadRespone(HttpClient client, string url)
+        protected static string ReadRespone(HttpResponseMessage response)
         {
-            HttpResponseMessage response = client.GetAsync(url).Result;
             if (response.IsSuccessStatusCode)
             {
                 return response.Content.ReadAsStringAsync().Result;

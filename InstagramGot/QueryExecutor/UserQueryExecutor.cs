@@ -82,11 +82,12 @@ namespace InstagramGot.QueryExecutor
                     if(parameter.Count != null)
                         return mediaJsonController
                                 .MapJsonToMedias(UserEndPoint.APICall(parameter.Id.ToString()+ "/media/recent", 
-                                                new Dictionary<string, string>() { { "count", parameter.Count.ToString() } }));
+                                                new Dictionary<string, string>() { { "count", parameter.Count.Value.ToString() } }));
                     // With count and id
                     else
                         return mediaJsonController
-                               .MapJsonToMedias(UserEndPoint.APICall(parameter.Id.ToString() + "/media/recent"));
+                               .MapJsonToMedias(UserEndPoint.APICall(parameter.Id.ToString() + "/media/recent",
+                               new Dictionary<string, string>() { { "count", parameter.Count.Value.ToString() } }));
                 }
                 // No parameters
                 return mediaJsonController

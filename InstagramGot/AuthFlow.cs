@@ -36,7 +36,7 @@ namespace InstagramGot
         public static void CreateCredentialsFromAccesToken(string accesToken)
         {
             // Set the acces token
-            authContext.AccesToken = accesToken;
+            authContext.AccessToken = accesToken;
 
             // Set to httpclient the acces token
             InstagramHttpClient.InstagramHttpClient.context = authContext;

@@ -22,4 +22,14 @@ namespace InstagramGot.Exceptions
         {
         }
     }
+
+    /// <summary>
+    /// Comment format error
+    /// </summary>
+    public class CommentFormatException : Exception
+    {
+        public CommentFormatException(string message) : base(message)
+        {
+        }
+    }
 }

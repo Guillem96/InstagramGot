@@ -36,7 +36,7 @@ namespace InstagramGot.Models
                     break;
             }
 
-            switch (outgoing)
+            switch (incoming)
             {
                 case "none":
                     IngoingRelation = IngoingRelationshipStatus.None;
@@ -45,10 +45,10 @@ namespace InstagramGot.Models
                     IngoingRelation = IngoingRelationshipStatus.FollowedBy;
                     break;
                 case "requested_by":
-                    IngoingRelation = IngoingRelationshipStatus.FollowedBy;
+                    IngoingRelation = IngoingRelationshipStatus.RequestedBy;
                     break;
                 case "blocked_by_you":
-                    IngoingRelation = IngoingRelationshipStatus.FollowedBy;
+                    IngoingRelation = IngoingRelationshipStatus.BlockedByYou;
                     break;
             }
         }

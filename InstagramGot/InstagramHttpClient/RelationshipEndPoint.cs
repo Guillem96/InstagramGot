@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,23 +17,28 @@ namespace InstagramGot.InstagramHttpClient
         public static string RealationshipAPICall(string id, string action = "")
         {
             // Format parameters
-            string parameters = "";
+            HttpResponseMessage response = null;
 
-            if(action == "")
+            // Format final request
+            string urlParameters = String.Format(endPoints[EndPointsTypes.Relationships], id) + "?access_token=" + context.AccessToken;
+
+            if (action == "")
             {
                 // GET (get info of a relation ship
-                parameters = "";
+                response = client.GetAsync(urlParameters).Result;
             }
             else
             {
                 // POST (create or modifie a relation ship)
-                parameters = "&action=" + action;
+                var content = new FormUrlEncodedContent(new[]
+                {
+                    new KeyValuePair<string, string>("action", action)
+                });
+
+                response = client.PostAsync(urlParameters, content).Result;
             }
 
-            // Format final request
-            string urlParameters = String.Format(endPoints[EndPointsTypes.Relationships],id) + "?access_token=" + context.AccesToken + parameters;
-
-            return ReadRespone(client, urlParameters);
+            return ReadRespone(response);
         }
 
         /// <summary>
@@ -42,9 +48,10 @@ namespace InstagramGot.InstagramHttpClient
         public static string GetFollowsAPICall()
         {
             // Format final request
-            string urlParameters = endPoints[EndPointsTypes.Follows] + "?access_token=" + context.AccesToken;
+            string urlParameters = endPoints[EndPointsTypes.Follows] + "?access_token=" + context.AccessToken;
 
-            return ReadRespone(client, urlParameters);
+            HttpResponseMessage response = client.GetAsync(urlParameters).Result;
+            return ReadRespone(response);
         }
 
         /// <summary>
@@ -54,9 +61,11 @@ namespace InstagramGot.InstagramHttpClient
         public static string GetFollowedByAPICall()
         {
             // Format final request
-            string urlParameters = endPoints[EndPointsTypes.FollowedBy] + "?access_token=" + context.AccesToken;
+            string urlParameters = endPoints[EndPointsTypes.FollowedBy] + "?access_token=" + context.AccessToken;
 
-            return ReadRespone(client, urlParameters);
+            HttpResponseMessage response = client.GetAsync(urlParameters).Result;
+
+            return ReadRespone(response);
         }
 
         /// <summary>
@@ -66,9 +75,11 @@ namespace InstagramGot.InstagramHttpClient
         public static string GetRequestedByAPICall()
         {
             // Format final request
-            string urlParameters = endPoints[EndPointsTypes.RequestedBy] + "?access_token=" + context.AccesToken;
+            string urlParameters = endPoints[EndPointsTypes.RequestedBy] + "?access_token=" + context.AccessToken;
 
-            return ReadRespone(client, urlParameters);
+            HttpResponseMessage response = client.GetAsync(urlParameters).Result;
+
+            return ReadRespone(response);
         }
 
     }

@@ -38,7 +38,11 @@ namespace InstagramGot.QueryExecutor
             }
         }
 
-        public IRelationship CreateRelationshìp(long id, string action)
+
+        /// <summary>
+        /// Follow, unfollow, ignore or approve a relationship
+        /// </summary>
+        public IRelationship CreateOrDestroyRelationship(long id, string action)
         {
             try
             {

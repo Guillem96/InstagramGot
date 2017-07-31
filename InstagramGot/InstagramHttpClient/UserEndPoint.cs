@@ -28,9 +28,11 @@ namespace InstagramGot.InstagramHttpClient
             }
             
             // Format final request
-            string urlParameters = endPoints[EndPointsTypes.Users] + id + "/?access_token=" + context.AccesToken;
+            string urlParameters = endPoints[EndPointsTypes.Users] + id + "/?access_token=" + context.AccessToken + parameters;
 
-            return ReadRespone(client, urlParameters);
+            HttpResponseMessage response = client.GetAsync(urlParameters).Result;
+
+            return ReadRespone(response);
         }
 
         public static string ApiCallSearch(string query, int count = 0)
@@ -38,9 +40,11 @@ namespace InstagramGot.InstagramHttpClient
 
             string urlParameters = endPoints[EndPointsTypes.Users] + "search?q=" + query + 
                                     (count != 0 ? "&count=" + count.ToString() : "") + 
-                                    "&access_token=" + context.AccesToken;
+                                    "&access_token=" + context.AccessToken;
 
-            var s = ReadRespone(client, urlParameters);
+            HttpResponseMessage response = client.GetAsync(urlParameters).Result;
+
+            var s = ReadRespone(response);
             return s;
 
         }

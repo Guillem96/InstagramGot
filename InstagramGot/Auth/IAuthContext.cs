@@ -2,7 +2,7 @@
 {
     public interface IAuthContext
     {
-        string AccesToken { get; set; }
+        string AccessToken { get; set; }
         string AuthorizationURL { get; set; }
     }
 }

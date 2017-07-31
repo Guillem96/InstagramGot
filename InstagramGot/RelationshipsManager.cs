@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InstagramGot
 {
-    public static class RelationShips
+    public static class RelationshipsManager
     {
         private static QueryExecutor.IRelationshipQueryExecutor relationshipExecutor = new QueryExecutor.RelationshipQueryExecutor();
 
@@ -67,6 +67,55 @@ namespace InstagramGot
             try
             {
                 return relationshipExecutor.RelationshipInfo(id);
+            }
+            catch (Exceptions.InstagramAPICallException e)
+            {
+                throw e;
+            }
+        }
+
+        public static Models.IRelationship DestroyRelationship(long id)
+        {
+            try
+            {
+                return relationshipExecutor.CreateOrDestroyRelationship(id, "unfollow");
+            }
+            catch (Exceptions.InstagramAPICallException e)
+            {
+                throw e;
+            }
+        }
+
+        public static Models.IRelationship CreateRelationship(long id)
+        {
+            try
+            {
+                return relationshipExecutor.CreateOrDestroyRelationship(id, "follow");
+            }
+            catch (Exceptions.InstagramAPICallException e)
+            {
+                throw e;
+            }
+        }
+
+
+        public static Models.IRelationship IgnoreRelationship(long id)
+        {
+            try
+            {
+                return relationshipExecutor.CreateOrDestroyRelationship(id, "ignore");
+            }
+            catch (Exceptions.InstagramAPICallException e)
+            {
+                throw e;
+            }
+        }
+
+        public static Models.IRelationship ApproveRelationship(long id)
+        {
+            try
+            {
+                return relationshipExecutor.CreateOrDestroyRelationship(id, "approve");
             }
             catch (Exceptions.InstagramAPICallException e)
             {

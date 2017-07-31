@@ -69,5 +69,10 @@ namespace InstagramGot.Models
         {
             
         }
+
+        public override string ToString()
+        {
+            return "User: " + FullName + " - " + Username;
+        }
     }
 }

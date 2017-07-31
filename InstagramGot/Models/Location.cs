@@ -17,5 +17,10 @@ namespace InstagramGot.Models
         public double Longitude { get => longitude; set => longitude = value; }
         public string Name { get => name; set => name = value; }
         public long Id { get => id; set => id = value; }
+
+        public override string ToString()
+        {
+            return "Location: " + Name;
+        }
     }
 }

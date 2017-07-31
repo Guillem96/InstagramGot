@@ -1,5 +1,6 @@
 ﻿using InstagramGot.Models;
 using Newtonsoft.Json.Linq;
+using System.Collections.Generic;
 
 namespace InstagramGot.JsonController
 {
@@ -7,5 +8,6 @@ namespace InstagramGot.JsonController
     {
         ILocation MapJsonToLocation(string json);
         ILocation MapJsonToLocation(JToken json);
+        List<ILocation> MapJsonToLocations(string json);
     }
 }

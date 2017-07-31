@@ -7,7 +7,7 @@ namespace InstagramGot.Models
         IMinifiedUser CreatedBy { get; set; }
         int CommentsCount { get; set; }
         long CreatedTimeUnixMiliseconds { get; set; }
-        long Id { get; set; }
+        string Id { get; set; }
         string ImageLowResolutionUrl { get; set; }
         string ImageStandardResolutionUrl { get; set; }
         string ImageThumbnailUrl { get; set; }
@@ -16,5 +16,6 @@ namespace InstagramGot.Models
         string MediaUrl { get; set; }
         string Text { get; set; }
         List<IMinifiedUser> UsersInPhoto { get; set; }
+        List<string> Tags { get; set; }
     }
 }

@@ -43,7 +43,7 @@ namespace InstagramGot
         /// <summary>
         /// Gets the user with an specific id.
         /// </summary>
-        /// <exception cref="Exceptions.InstagramAPICallException">Application authorization error.</exception>
+        /// <exception cref="Exceptions.InstagramAPICallException">Application authorization error, instagram is private.</exception>
         public static Models.IUser GetUser(long id)
         {
             try
