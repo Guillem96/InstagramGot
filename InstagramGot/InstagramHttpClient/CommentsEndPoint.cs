@@ -33,7 +33,7 @@ namespace InstagramGot.InstagramHttpClient
                 throw new Exceptions.CommentFormatException("Comment length must be less than 300 characters.");
 
             // Check that all letters can't be capital case
-            if(text.Count() == text.Where(c => Char.IsUpper(c)).Count())
+            if(text.IsAllUpper())
                 throw new Exceptions.CommentFormatException("The comment cannot consist of all capital letters.");
 
             // Check that comment contains les than 5 hastags

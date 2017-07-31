@@ -1,0 +1,1 @@
+<Playlist Version="1.0"><Add Test="InstagramGot.Test.MediaTest.GetMediaFromShortCode" /><Add Test="InstagramGot.Test.MediaTest.GetMediaFromId" /></Playlist>

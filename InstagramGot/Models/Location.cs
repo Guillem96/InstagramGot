@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InstagramGot.Models
 {
-    internal class Location : ILocation
+    internal class Location : ILocation, IEquatable<ILocation>
     {
         private double latitude;
         private double longitude;
@@ -17,6 +17,14 @@ namespace InstagramGot.Models
         public double Longitude { get => longitude; set => longitude = value; }
         public string Name { get => name; set => name = value; }
         public long Id { get => id; set => id = value; }
+
+        public bool Equals(ILocation other)
+        {
+            return Latitude == other.Latitude &&
+                Longitude == other.Longitude &&
+                name.Equals(other.Name) &&
+                Id == other.Id;
+        }
 
         public override string ToString()
         {

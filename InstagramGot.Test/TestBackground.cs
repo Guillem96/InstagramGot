@@ -24,7 +24,7 @@ namespace InstagramGot.Test
             InstagramCredentials instaCre = new InstagramCredentials("6a5985a97e0842d3a97c80d29a761f83");
             IAuthContext context = AuthFlow.InitAuth(instaCre, "http://www.google.es");
 
-            var token = GetTokenFromUrl(context.AuthorizationURL, "guillem_orellana", "go123456789");
+            var token = GetTokenFromUrl(context.AuthorizationURL, "", "");
             // Set the credentials
             AuthFlow.CreateCredentialsFromAccesToken(token);
 
