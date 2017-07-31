@@ -30,9 +30,18 @@ Search functionality can't be tested because the application client ID for insta
 Instagram stuff is paranoid about users data...
 
 
-## Deployment
+## Nuget Package Uploaded
 
-Add additional notes about how to deploy this on a live system
+This library has been uploaded as a nuget package for visual studio c#. 
+Link to nuget package [InstagramGot Nuget Package](https://www.nuget.org/packages/InstagramLib.InstagramGot/1.0.0)
+
+## Install
+
+Via Nuget commands
+
+```
+PM> Install-Package InstagramLib.InstagramGot
+```
 
 ## Built With
 

@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>GuillemOrellana.InstagramGot</id>
+    <id>InstagramLib.InstagramGot</id>
     <version>$version$</version>
     <title>$title$</title>
     <authors>Guillem Orellana Trullols</authors>
     <owners>Guillem Orellana Trullols</owners>
-    <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
-    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+    <projectUrl>https://github.com/Guillem96/InstagramGot/</projectUrl>
+    <iconUrl>https://github.com/Guillem96/InstagramGot/blob/master/InstagramGotLogo.png?raw=true</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Awesome Instagram C# Library out ther!</description>
     <releaseNotes>First realease.</releaseNotes>
