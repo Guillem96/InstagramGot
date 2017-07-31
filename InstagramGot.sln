@@ -7,10 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstagramGot", "InstagramGo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstagramGot.Test", "InstagramGot.Test\InstagramGot.Test.csproj", "{1190A4C7-3D03-41AA-9E2B-200335EE7BEE}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E1F36453-D25D-47E1-B2A9-88F64621F774}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{59EF0662-C518-41D1-81BF-23FF476A66F9}"
 	ProjectSection(SolutionItems) = preProject
-		.gitignore = .gitignore
-		README.MD = README.MD
+		InstagramGotLogo.png = InstagramGotLogo.png
+		README.md = README.md
 	EndProjectSection
 EndProject
 Global

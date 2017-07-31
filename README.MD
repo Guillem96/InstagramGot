@@ -1,6 +1,6 @@
 # InstagramGot
 
-![InstagramGot Logo](InstagramGotLogo.png)
+![InstagramGot Logo](InstagramGotLogo.png =250x)
 
 Instagram C# Library In order to simplify the calls to instagram api.
 
