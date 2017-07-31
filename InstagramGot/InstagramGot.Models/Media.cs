@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace InstagramGot.Models
 {
-    internal class Media : IMedia, IEquatable<IMedia>
-    {
+    internal class Media : IMedia
+    { 
         private IMinifiedUser createdBy;
         private string imageThumbnailUrl;
         private string imageLowResolutionUrl;
@@ -38,19 +38,7 @@ namespace InstagramGot.Models
 
         public bool Equals(IMedia other)
         {
-            return createdBy.Equals(other.CreatedBy) &&
-                ImageLowResolutionUrl.Equals(other.ImageLowResolutionUrl) &&
-                ImageStandardResolutionUrl.Equals(other.ImageStandardResolutionUrl) &&
-                ImageThumbnailUrl.Equals(other.ImageThumbnailUrl) &&
-                CreatedTimeUnixMiliseconds == other.CreatedTimeUnixMiliseconds &&
-                id.Equals(other.Id) &&
-                Text.Equals(other.Text) &&
-                LikesCount == other.LikesCount &&
-                commentsCount == other.CommentsCount &&
-                MediaUrl.Equals(other.MediaUrl) &&
-                Location.Equals(other.Location) &&
-                UsersInPhoto.Equals(other.UsersInPhoto) &&
-                Tags.Equals(other);
+            return Id.Equals(other.Id);
         }
 
         public override string ToString()

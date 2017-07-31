@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InstagramGot.Models
 {
-    internal class MinifiedUser : IMinifiedUser, IEquatable<IMinifiedUser>
+    internal class MinifiedUser : IMinifiedUser
     {
         public long Id { get; set; }
         public string Username { get; set; }
@@ -15,10 +15,7 @@ namespace InstagramGot.Models
 
         public bool Equals(IMinifiedUser other)
         {
-            return Id == other.Id &&
-                Username.Equals(other.Username) &&
-                ProfileImageUrl.Equals(other.ProfileImageUrl) &&
-                FullName.Equals(other.FullName);
+            return Id == other.Id;
         }
 
         public override string ToString()

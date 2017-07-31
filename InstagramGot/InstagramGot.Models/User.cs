@@ -74,5 +74,10 @@ namespace InstagramGot.Models
         {
             return "User: " + FullName + " - " + Username;
         }
+
+        public bool Equals(IUser other)
+        {
+            return Id.Equals(other.Id);
+        }
     }
 }

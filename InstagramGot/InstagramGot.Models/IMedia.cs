@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace InstagramGot.Models
 {
-    public interface IMedia
+    public interface IMedia : IEquatable<IMedia>
     {
         IMinifiedUser CreatedBy { get; set; }
         int CommentsCount { get; set; }

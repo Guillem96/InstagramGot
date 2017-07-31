@@ -30,11 +30,15 @@ namespace InstagramGot
         /// Post a like to a media.
         /// </summary>
         /// <exception cref="Exceptions.InstagramAPICallException">API Call not allowed</exception>
-        public static bool PostCommentToMedia(string mediaId)
+        public static bool PostLikeToMedia(string mediaId)
         {
             try
             {
-                return likesExecutor.PostLikeToMedia(mediaId);
+                // Like already exist
+                if (GetLikesFromMedia(mediaId).Any(l => l.Id == UserManager.GetAuthenticatedUser().Id))
+                    return false;
+                else
+                    return likesExecutor.PostLikeToMedia(mediaId);
             }
             catch (Exceptions.InstagramAPICallException e)
             {
@@ -46,11 +50,15 @@ namespace InstagramGot
         /// Delete a like.
         /// </summary>
         /// <exception cref="Exceptions.InstagramAPICallException">API Call not allowed</exception>
-        public static bool DeleteLike(string mediaId, long commentId)
+        public static bool DeleteLike(string mediaId)
         {
             try
             {
-                return likesExecutor.DeleteLike(mediaId);
+                // Like doesn't exist
+                if (!GetLikesFromMedia(mediaId).Any(l => l.Id == UserManager.GetAuthenticatedUser().Id))
+                    return false;
+                else
+                    return likesExecutor.DeleteLike(mediaId);
             }
             catch (Exceptions.InstagramAPICallException e)
             {

@@ -74,6 +74,7 @@ namespace InstagramGot
             }
         }
 
+
         public static Models.IRelationship DestroyRelationship(long id)
         {
             try
@@ -97,7 +98,6 @@ namespace InstagramGot
                 throw e;
             }
         }
-
 
         public static Models.IRelationship IgnoreRelationship(long id)
         {

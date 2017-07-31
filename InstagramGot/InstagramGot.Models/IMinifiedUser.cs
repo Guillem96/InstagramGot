@@ -1,6 +1,6 @@
 ﻿namespace InstagramGot.Models
 {
-    public interface IMinifiedUser
+    public interface IMinifiedUser : System.IEquatable<IMinifiedUser>
     {
         long Id { get; set; }
         string ProfileImageUrl { get; set; }

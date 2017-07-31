@@ -1,0 +1,1 @@
+<Playlist Version="1.0"><Add Test="InstagramGot.Test.UserTests.GetUserFromId" /><Add Test="InstagramGot.Test.UserTests.GetRecentMediaWithCount" /><Add Test="InstagramGot.Test.UserTests.GetRecentMediaWithParameters" /></Playlist>

@@ -43,7 +43,7 @@ namespace InstagramGot.InstagramHttpClient
         /// </summary>
         public static bool DeleteLikeAPICall(string mediaId)
         {
-            string urlParameters = String.Format(endPoints[EndPointsTypes.Likes], mediaId) + "/?access_token=" + context.AccessToken;
+            string urlParameters = String.Format(endPoints[EndPointsTypes.Likes], mediaId) + "?access_token=" + context.AccessToken;
 
             var response = client.DeleteAsync(urlParameters).Result;
 

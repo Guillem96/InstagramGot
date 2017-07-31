@@ -31,10 +31,6 @@ namespace InstagramGot.Test
             {
                 Assert.Fail("Instagram API call error." + e.ToString());
             }
-            catch (Exception e)
-            {
-                Assert.Fail("Unexpected: " + e.ToString());
-            }
         }
 
         [TestMethod]
@@ -55,23 +51,18 @@ namespace InstagramGot.Test
                 Assert.IsNotNull(lessRecent);
 
                 // Get short code
-                var shortCode = media.MediaUrl.Split(new char[] { '/' });
-                Assert.Fail(String.Join(", ", shortCode));
+                var shortCode = media.MediaUrl.Split(new char[] { '/' }).Where(x => !String.IsNullOrEmpty(x)).Last();
                 // Get the same media from short code
-                //var shortMedia = MediaManager.GetMediaInfoFromShortCode(shortCode);
+                var shortMedia = MediaManager.GetMediaInfoFromShortCode(shortCode);
 
                 //// Check if media from id is the same than media from shortcode
-                //Assert.IsNotNull(shortMedia);
-                //Assert.AreEqual(shortMedia, media);
+                Assert.IsNotNull(shortMedia);
+                Assert.IsTrue(shortMedia.Equals(media));
 
             }
             catch (Exceptions.InstagramAPICallException e)
             {
                 Assert.Fail("Instagram API call error." + e.ToString());
-            }
-            catch (Exception e)
-            {
-                Assert.Fail("Unexpected: " + e.ToString());
             }
         }
     }

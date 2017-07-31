@@ -1,0 +1,1 @@
+<Playlist Version="1.0"><Add Test="InstagramGot.Test.RelationshipTests.GetFollowersAndRelationshipInfo" /><Add Test="InstagramGot.Test.RelationshipTests.GetFollowsAndRelationshipInfo" /><Add Test="InstagramGot.Test.RelationshipTests.UnfollowAndFollowAgain" /><Add Test="InstagramGot.Test.RelationshipTests.TryToFollowAnAlreadyFollowedUser" /></Playlist>

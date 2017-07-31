@@ -48,10 +48,6 @@ namespace InstagramGot.Test
             {
                 Assert.Fail("Instagram API call error." + e.ToString());
             }
-            catch (Exception e)
-            {
-                Assert.Fail("Unexpected: " + e.ToString());
-            }
         }
 
         [TestMethod]
@@ -90,10 +86,6 @@ namespace InstagramGot.Test
             catch (Exceptions.InstagramAPICallException e)
             {
                 Assert.Fail("Instagram API call error." + e.ToString());
-            }
-            catch (Exception e)
-            {
-                Assert.Fail("Unexpected: " + e.ToString());
             }
         }
 

@@ -55,10 +55,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LikesTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CommentsTest.cs" />
+    <Compile Include="RelationshipTests.cs" />
+    <Compile Include="TagsLocationsTests.cs" />
     <Compile Include="TestBackground.cs" />
     <Compile Include="MediaTest.cs" />
+    <Compile Include="UserTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -1,6 +1,6 @@
 ﻿namespace InstagramGot.Models
 {
-    public interface IUser
+    public interface IUser : System.IEquatable<IUser>
     {
         string Bio { get; set; }
         int FollowedBy { get; set; }

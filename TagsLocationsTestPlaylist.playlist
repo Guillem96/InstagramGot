@@ -1,0 +1,1 @@
+<Playlist Version="1.0"><Add Test="InstagramGot.Test.TagsLocationsTests.GetTagInfo" /><Add Test="InstagramGot.Test.TagsLocationsTests.GetLocationInfo" /><Add Test="InstagramGot.Test.TagsLocationsTests.GetTaggedMedia" /><Add Test="InstagramGot.Test.TagsLocationsTests.GetLocatedMedia" /></Playlist>
